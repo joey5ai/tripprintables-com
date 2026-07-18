@@ -1,0 +1,22 @@
+# Trip Printables
+
+> Free travel planning templates: itineraries, packing lists, budgets, and more.
+
+Trip Printables publishes genuinely usable travel planning templates, one template per page,
+each explained in real detail rather than presented as a bare thumbnail in a gallery. Every
+template is available as a "Make a copy" Google Docs or Sheets link, or as a downloadable PDF,
+with no account or email required to view it. A paid Complete Trip Planning Kit bundles
+editable versions of everything plus bonus templates for people who want the full system.
+
+## Key Pages
+
+- [Travel Itinerary Template](https://tripprintables.com/templates/travel-itinerary-template/): day-by-day trip planner with a bookings tracker and emergency info block
+- [Itinerary Template, Google Docs](https://tripprintables.com/templates/itinerary-template-google-docs/): document-format version of the itinerary template
+- [Itinerary Template, Google Sheets](https://tripprintables.com/templates/itinerary-template-google-sheets/): spreadsheet-format version with a running cost total
+- [All Templates](https://tripprintables.com/templates/): full template library
+- [Complete Trip Planning Kit](https://tripprintables.com/premium/): the paid bundle
+
+## About
+
+Built and maintained as a small, focused publisher of free travel tools. No account walls,
+no dark patterns, one genuinely useful template per page.

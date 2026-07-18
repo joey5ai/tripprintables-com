@@ -1,0 +1,3 @@
+#!/bin/sh
+# Content audit gate. HARD failures block the commit; SOFT warnings print and allow.
+npm run --silent audit

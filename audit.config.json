@@ -1,0 +1,35 @@
+{
+  "titleMaxChars": 60,
+  "metaMaxChars": 160,
+  "metaMinChars": 120,
+
+  "hardBannedPhrases": [
+    "lorem ipsum",
+    "coming soon (coming soon)"
+  ],
+
+  "softBannedPhraseRegexes": [
+    {
+      "pattern": "unlock|discover the secret|game[- ]?changing",
+      "flags": "gi",
+      "label": "clickbait marketing phrasing (this site's voice is plain and direct, not hype-y)"
+    }
+  ],
+
+  "contentFileExts": [".njk", ".md"],
+  "excludeDirs": ["node_modules", "_site", ".git", "scripts"],
+
+  "checks": {
+    "emDashes": "hard",
+    "bannedPhrasesHard": "hard",
+    "bannedPhrasesRegex": "soft",
+    "singleH1": "hard",
+    "titlePresence": "hard",
+    "metaPresence": "hard",
+    "titleLength": "soft",
+    "metaLength": "soft",
+    "jsonLdSchema": "soft",
+    "downloadCtaPresent": "hard",
+    "noInternalNofollow": "hard"
+  }
+}
