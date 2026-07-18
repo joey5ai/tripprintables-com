@@ -5,6 +5,14 @@
 **Stack:** Eleventy (11ty) static site generator, Nunjucks templates, plain CSS
 **Deployment:** Cloudflare Pages (Git integration, auto-deploy on push to main)
 
+> ⚠️ **TEMPORARY: `robots.txt` is currently `Disallow: /` (noindex), 2026-07-18.** The domain
+> was pointed live before all 15 pages were built, so indexing was turned off as a safety
+> valve while content is still in progress. This reverses the plan's original "indexing on
+> from day one" decision (see Architecture Decisions below) **temporarily, not permanently.**
+> **Revert to `Allow: /` once Batch 2 is complete and the site is ready for real launch** —
+> do not let this quietly become the permanent state. Check this note before considering the
+> site "launched."
+
 ## What This Is
 
 A free travel-template library. One template per page (itinerary, packing list, budget, and
@@ -85,9 +93,11 @@ restraint is the point.
   wilebski.ai/optionsscreener family, there is no `deploy-tripprintables.sh` wrapper. Cloudflare
   builds and deploys directly from GitHub on push. Rollback is via the CF dashboard's "rollback
   to previous deployment," not a custom script.
-- **Indexing is on from day one.** `robots.txt` allows all crawlers immediately. This is the
-  deliberate opposite of Uncle Nobody's stealth-then-launch pattern; the whole point of this
-  site is to rank, so there's no dark-launch phase.
+- **Indexing is meant to be on from day one** (deliberate opposite of Uncle Nobody's
+  stealth-then-launch pattern; the whole point of this site is to rank, so no dark-launch
+  phase). **Currently temporarily reversed** — see the warning banner at the top of this file.
+  The domain went live via DNS/Cloudflare before all 15 pages existed, so `robots.txt` is
+  `Disallow: /` until Batch 2 finishes. Revert then.
 - **Email capture via Kit (ESP), not a Sheet+Function shim.** Real list infrastructure from day
   one: segmentation and automation-readiness handled by the platform, not built in-house.
 - **Template documents (Google Docs/Sheets) live under a dedicated Gmail account**, separate
