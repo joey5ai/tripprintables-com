@@ -126,15 +126,17 @@ restraint is the point.
 
 - **Google Docs/Sheets API access, not yet set up.** Needed to actually create the real
   template documents the "Make a copy" CTAs point to; currently placeholder links marked
-  "(coming soon)" on every template page. Plan: dedicated Gmail account (owns the documents),
-  OAuth client published "In production" from the start (avoids the 7-day testing-token expiry;
-  will show a one-time "unverified app" click-through during consent since Drive/Docs/Sheets
-  scopes are sensitive, not a review wait). Owner: Joseph (account creation, one-time consent
-  click). Blocks: real downloads on every template page, Batch 2's remaining 12 pages
-  replicating this pattern at volume.
+  "(coming soon)" on all 15 template pages (Batch 2 is complete, all pages built). Plan:
+  dedicated Gmail account (owns the documents), OAuth client published "In production" from
+  the start (avoids the 7-day testing-token expiry; will show a one-time "unverified app"
+  click-through during consent since Drive/Docs/Sheets scopes are sensitive, not a review
+  wait). Owner: Joseph (account creation, one-time consent click). Blocks: real downloads on
+  every template page.
 - **Lemon Squeezy account, not yet set up.** Needed for the premium bundle checkout. Account
   creation + identity verification + store activation review (2-3 business days KYC/KYB).
-  Owner: Joseph. Blocks: Batch 3 (premium bundle + checkout).
+  Owner: Joseph. Blocks: Batch 3's actual checkout wiring (the `/premium/` sales page itself
+  is built and live — price **$15**, bundle = all 15 templates fully editable + Excel format
+  for every one, no bonus filler content, decided 2026-07-18).
 - **Kit (ESP) account, not yet set up.** Needed for email capture. Same-day setup, no
   verification wait. Owner: Joseph. Blocks: Batch 4's email-capture wiring.
 - **Anchor template document content, approved as the pattern** (2026), including a fix for
