@@ -103,6 +103,15 @@ restraint is the point.
 - **Template documents (Google Docs/Sheets) live under a dedicated Gmail account**, separate
   from Joseph's personal account, for clean business-asset ownership. See Backlog below for
   setup status.
+- **Dual-channel acquisition for the premium bundle, decided 2026-07-19 (deliberate, not scope
+  creep).** Primary channel: Lemon Squeezy checkout on tripprintables.com (better fee
+  reliability, Stripe-backed) — this stays the main sales path. Secondary channel: also list
+  the same Complete Trip Planning Kit bundle on Gumroad, purely for its free Discover
+  marketplace exposure while SEO authority builds over the coming months — not a replacement
+  or a hedge, a low-cost additional acquisition channel. No exclusivity conflict between the
+  two platforms. Tradeoff considered: light dual-listing upkeep (keeping price/contents in
+  sync across two dashboards) vs. free additional distribution — judged worth it since the
+  cost is minimal. See Backlog below for timing.
 
 ## Success Gate (60-90 days from launch)
 
@@ -137,6 +146,12 @@ restraint is the point.
   Owner: Joseph. Blocks: Batch 3's actual checkout wiring (the `/premium/` sales page itself
   is built and live — price **$15**, bundle = all 15 templates fully editable + Excel format
   for every one, no bonus filler content, decided 2026-07-18).
+- **Gumroad listing, not yet created — secondary acquisition channel (decided 2026-07-19, see
+  Architecture Decisions above).** Same Complete Trip Planning Kit bundle, same $15 price and
+  contents, listed on Gumroad for its free Discover marketplace exposure. Lemon Squeezy remains
+  primary checkout; this is additive, not a replacement. Timing: build this at the same time as
+  Batch 3's Lemon Squeezy checkout wiring, once Lemon Squeezy's store activation review clears —
+  don't forget the second platform when that work happens.
 - **Kit (ESP) account, not yet set up.** Needed for email capture. Same-day setup, no
   verification wait. Owner: Joseph. Blocks: Batch 4's email-capture wiring.
 - **Anchor template document content, approved as the pattern** (2026), including a fix for
