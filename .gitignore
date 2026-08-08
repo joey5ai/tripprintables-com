@@ -2,3 +2,6 @@ node_modules/
 _site/
 .DS_Store
 *.log
+
+# scratch files: temporary/verification-only, never real content
+.scratch/
