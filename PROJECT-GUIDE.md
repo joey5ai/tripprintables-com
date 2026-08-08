@@ -5,13 +5,11 @@
 **Stack:** Eleventy (11ty) static site generator, Nunjucks templates, plain CSS
 **Deployment:** Cloudflare Pages (Git integration, auto-deploy on push to main)
 
-> ⚠️ **TEMPORARY: `robots.txt` is currently `Disallow: /` (noindex), 2026-07-18.** The domain
-> was pointed live before all 15 pages were built, so indexing was turned off as a safety
-> valve while content is still in progress. This reverses the plan's original "indexing on
-> from day one" decision (see Architecture Decisions below) **temporarily, not permanently.**
-> **Revert to `Allow: /` once Batch 2 is complete and the site is ready for real launch** —
-> do not let this quietly become the permanent state. Check this note before considering the
-> site "launched."
+> ✅ **`robots.txt` reverted to `Allow: /`, 2026-08-08.** Batch 2 was already complete (all 15
+> pages built, see below), and the temporary noindex from 2026-07-18 had been left in place
+> past that point without being reverted. Fixed back to the plan's original "indexing on from
+> day one" decision. See the Backlog section for the still-open payment (Lemon Squeezy/Gumroad)
+> and GTM analytics gaps — those remain genuinely unset, not oversights.
 
 ## What This Is
 
@@ -154,6 +152,12 @@ restraint is the point.
   don't forget the second platform when that work happens.
 - **Kit (ESP) account, not yet set up.** Needed for email capture. Same-day setup, no
   verification wait. Owner: Joseph. Blocks: Batch 4's email-capture wiring.
+- **GTM (Google Tag Manager) container, not yet set up.** `src/_data/site.json`'s `gtmId` is
+  still the literal placeholder value `GTM-XXXXXXX` — the layout wiring exists, but no real
+  container is connected, so there is no analytics visibility into this property at all right
+  now. Confirmed live (2026-08-08): the placeholder string ships as-is to production. Owner:
+  Joseph (create a GTM container, or point to an existing one, and update `gtmId`). Blocks: any
+  traffic/conversion visibility.
 - **Anchor template document content, approved as the pattern** (2026), including a fix for
   the Google Docs version's day-by-day block: pre-fill 5 day blocks rather than one, with a
   one-line note on how to add more for longer trips (Docs has no native repeating-section
