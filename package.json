@@ -4,12 +4,13 @@
   "private": true,
   "description": "tripprintables.com — free travel planning templates",
   "scripts": {
-    "build": "eleventy",
+    "build": "eleventy && npx pagefind --site _site",
     "serve": "eleventy --serve",
     "audit": "node scripts/audit.js",
     "prepare": "git config core.hooksPath .githooks || true"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "pagefind": "^1.5.2"
   }
 }

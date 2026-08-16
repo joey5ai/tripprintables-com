@@ -1,0 +1,34 @@
+---
+layout: layout.njk
+title: "Search Templates: Trip Printables"
+description: "Search every travel planning template on Trip Printables, including itineraries, checklists, budgets, and packing lists, to find exactly what you need for your trip."
+---
+<section class="container search-page">
+  <h1>Search templates</h1>
+  <p class="lede">Find the itinerary, checklist, or planner you're looking for.</p>
+  <div id="pagefind-search"></div>
+</section>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    new PagefindUI({ element: "#pagefind-search", showSubResults: true });
+  });
+</script>
+
+<style>
+  .search-page { padding: 3rem 0 4rem; max-width: 720px; }
+  .search-page h1 { margin-bottom: 0.5rem; }
+  #pagefind-search {
+    margin-top: 2rem;
+    --pagefind-ui-primary: var(--teal);
+    --pagefind-ui-text: var(--ink);
+    --pagefind-ui-background: var(--bg);
+    --pagefind-ui-border: var(--border);
+    --pagefind-ui-tag: var(--bg2);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-font: 'DM Sans', sans-serif;
+  }
+</style>
