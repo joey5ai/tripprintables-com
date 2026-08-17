@@ -14,16 +14,13 @@
 #    `npm run build` / `npm run audit` since package.json maps them that
 #    way -- checked directly, not assumed).
 #
-# 2. No per-page noindex meta tag exists anywhere in this codebase (checked
-#    layout.njk directly). Indexing here is controlled entirely by the
-#    static src/static/robots.txt file, not a templated meta tag. So the
-#    launch-state flag (site.json's siteIsLive) and the thing that actually
-#    controls indexing (robots.txt content) are two separate files, not one
-#    piece of code deriving the other like knowyourisms' SITE_IS_LIVE ->
-#    layout.tsx. This script checks robots.txt's real live content directly
-#    rather than inventing a meta tag this site doesn't have, and doesn't
-#    trust the declared flag blindly -- it verifies the real mechanism
-#    matches what the flag claims.
+# 2. Updated 2026-08-16: layout.njk now has a real templated meta robots tag,
+#    driven by site.json's siteIsLive, same pattern as knowyourisms'
+#    SITE_IS_LIVE -> layout.tsx. robots.txt is now also templated
+#    (src/robots.njk, not a static passthrough file) and always emits
+#    `Allow: /` in both states -- only its Sitemap line is state-conditional.
+#    This script verifies both the meta tag and the Sitemap line match what
+#    the flag claims, rather than trusting the declared flag blindly.
 #
 # Usage: deploy-tripprintables.sh [--dry-run] [repo-dir]
 #   --dry-run   Skip the actual git push and any rollback git operations.
@@ -160,20 +157,37 @@ else
 fi
 
 # -- 5. siteIsLive-branched validation -------------------------------------------
+#
+# Rewritten 2026-08-16 to match the live/dark state spec decided that night
+# (docs/site-build-checklist.md, "Reference: Live vs. Dark State Spec"):
+# robots.txt ALWAYS allows crawling now, in both states -- blocking crawling
+# would prevent Google from ever seeing the noindex meta tag and honoring it.
+# The only things that actually vary by state are the meta robots tag
+# (index vs noindex, both always `follow`) and whether robots.txt's Sitemap
+# line is present. This replaces the old Allow/Disallow-branching logic,
+# which is now permanently wrong -- robots.txt disallowing was never
+# supposed to happen again after 2026-08-16, live or dark.
 
 fetch_robots() {
   curl -s --max-time 15 "$LIVE_URL/robots.txt" -o "$ROBOTS_BODY" || fail "could not fetch robots.txt for validation"
 }
 
-robots_disallows_all() {
-  # Matches this repo's actual bug pattern from earlier tonight: the final
-  # "User-agent: *" block (after Cloudflare's managed AI-content-signal
-  # preamble) is the one that's actually in this repo's own robots.txt file.
-  tail -5 "$ROBOTS_BODY" | grep -qE '^User-agent: \*$' && tail -5 "$ROBOTS_BODY" | grep -qE '^Disallow: /$'
+robots_always_allows() {
+  tail -5 "$ROBOTS_BODY" | grep -qE '^User-agent: \*$' && tail -5 "$ROBOTS_BODY" | grep -qE '^Allow: /$'
 }
 
-robots_allows_all() {
-  tail -5 "$ROBOTS_BODY" | grep -qE '^User-agent: \*$' && tail -5 "$ROBOTS_BODY" | grep -qE '^Allow: /$'
+robots_has_sitemap_line() {
+  grep -qE '^Sitemap: ' "$ROBOTS_BODY"
+}
+
+meta_robots_is_noindex() {
+  grep -qE '<meta name="robots" content="noindex, ?follow"' "$LIVE_BODY"
+}
+
+meta_robots_is_index() {
+  # Absent tag is also valid live state (index,follow is the crawler
+  # default), so this passes on either an explicit index tag or no tag.
+  ! grep -qE '<meta name="robots" content="noindex' "$LIVE_BODY"
 }
 
 crawl_check() {
@@ -211,25 +225,29 @@ crawl_check() {
 VALIDATION_FAIL=""
 fetch_robots
 
-if [ "$SITE_IS_LIVE_RAW" = "false" ]; then
-  log "Pre-launch ruleset (siteIsLive false): confirming robots.txt still disallows all..."
-  if ! robots_disallows_all; then
-    VALIDATION_FAIL="robots.txt no longer disallows all -- indexing silently enabled while pre-launch"
+if ! robots_always_allows; then
+  VALIDATION_FAIL="robots.txt is not a clean 'Allow: /' -- this should never happen in either state as of 2026-08-16, needs manual review"
+elif [ "$SITE_IS_LIVE_RAW" = "false" ]; then
+  log "Dark-state ruleset (siteIsLive false): confirming meta robots is noindex and the Sitemap line is absent..."
+  if ! meta_robots_is_noindex; then
+    VALIDATION_FAIL="meta robots tag is not noindex,follow -- indexing silently enabled while dark"
+  elif robots_has_sitemap_line; then
+    VALIDATION_FAIL="robots.txt still has a Sitemap line while dark -- should be absent until launch"
   else
-    log "robots.txt confirmed disallowing all. Pre-launch: no further checks, no rollback path (nothing real is exposed pre-launch)."
+    log "Meta robots confirmed noindex,follow, Sitemap line confirmed absent. Dark state: no further checks, no rollback path (nothing real is exposed while dark)."
   fi
 else
-  log "Post-launch ruleset (siteIsLive true): confirming robots.txt still allows all, running crawl check..."
-  if robots_disallows_all; then
-    VALIDATION_FAIL="robots.txt disallows all on a supposedly-live site -- accidental full noindex"
-  elif ! robots_allows_all; then
-    VALIDATION_FAIL="robots.txt's final User-agent: * block is neither a clean Allow nor Disallow -- unexpected state, needs manual review"
+  log "Live-state ruleset (siteIsLive true): confirming meta robots is index, Sitemap line present, running crawl check..."
+  if ! meta_robots_is_index; then
+    VALIDATION_FAIL="meta robots tag is noindex on a supposedly-live site -- accidental deindex"
+  elif ! robots_has_sitemap_line; then
+    VALIDATION_FAIL="robots.txt is missing its Sitemap line on a supposedly-live site"
   else
     CRAWL_RESULT=$(crawl_check)
     if [ -n "$CRAWL_RESULT" ]; then
       VALIDATION_FAIL="crawl check failed: $CRAWL_RESULT"
     else
-      log "robots.txt confirmed allowing all, crawl check passed (sitemap URLs all clean)."
+      log "Meta robots confirmed index, Sitemap line present, crawl check passed (sitemap URLs all clean)."
     fi
   fi
 fi
@@ -297,13 +315,13 @@ if [ "$DRY_RUN" = "true" ]; then
   notify "tripprintables.com DRY RUN passed (no push, no deploy, no cache purge)
 Commit checked: $(git -C "$REPO_DIR" rev-parse --short HEAD)
 siteIsLive: $SITE_IS_LIVE_RAW
-Checks: HTTP 200 + content fingerprint OK + $([ "$SITE_IS_LIVE_RAW" = "false" ] && echo "robots.txt disallow confirmed" || echo "robots.txt allow confirmed + sitemap crawl clean")"
+Checks: HTTP 200 + content fingerprint OK + $([ "$SITE_IS_LIVE_RAW" = "false" ] && echo "meta robots noindex confirmed, no sitemap line" || echo "meta robots index confirmed, sitemap line present, crawl clean")"
   log "=== Dry run finished successfully, no real deploy occurred ==="
 else
   purge_cache "post-deploy" || log "Warning: cache purge failed after deploy, continuing"
   notify "tripprintables.com deployed
 Commit: $(git -C "$REPO_DIR" rev-parse --short HEAD)
 siteIsLive: $SITE_IS_LIVE_RAW
-Checks: HTTP 200 + content fingerprint OK + $([ "$SITE_IS_LIVE_RAW" = "false" ] && echo "robots.txt disallow confirmed" || echo "robots.txt allow confirmed + sitemap crawl clean")"
+Checks: HTTP 200 + content fingerprint OK + $([ "$SITE_IS_LIVE_RAW" = "false" ] && echo "meta robots noindex confirmed, no sitemap line" || echo "meta robots index confirmed, sitemap line present, crawl clean")"
   log "=== Deploy finished successfully ==="
 fi

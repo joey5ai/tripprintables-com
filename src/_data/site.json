@@ -1,10 +1,10 @@
 {
   "name": "Trip Printables",
   "url": "https://tripprintables.com",
-  "siteIsLive": true,
+  "siteIsLive": false,
   "tagline": "Free travel planning templates you can actually use today",
   "description": "Free, genuinely useful travel planning templates — itineraries, packing lists, budgets, and more. Make a copy in Google Docs or Sheets, or download a printable PDF.",
-  "gtmId": "GTM-KBCGTZTD",
+  "gtmId": "GTM-5M4W7LV8",
   "twitterHandle": "",
   "ogImage": "/images/og-default.png"
 }

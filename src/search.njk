@@ -17,6 +17,48 @@ description: "Search every travel planning template on Trip Printables, includin
   });
 </script>
 
+<script type="module">
+  // Fire-and-forget query capture, parallel to PagefindUI's own search
+  // (internal only per EDITORIAL.md-equivalent standard; never surfaced to
+  // readers). Runs its own pagefind.search() call rather than reading
+  // PagefindUI's rendered result count, since PagefindUI doesn't expose a
+  // search-event hook -- the local index lookup is cheap, so a second call
+  // is negligible cost, not a real duplicate-work concern.
+  let pagefind;
+  let debounceTimer;
+
+  async function logSearch(query, resultsCount) {
+    try {
+      await fetch("/api/log-search", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query, timestamp: new Date().toISOString(), resultsCount }),
+      });
+    } catch {
+      // best-effort only
+    }
+  }
+
+  async function handleInput(query) {
+    const trimmed = query.trim();
+    if (!trimmed) return;
+    if (!pagefind) {
+      pagefind = await import("/pagefind/pagefind.js");
+      await pagefind.init();
+    }
+    const search = await pagefind.search(trimmed);
+    logSearch(trimmed, search.results.length);
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("input", (e) => {
+      if (!e.target.matches(".pagefind-ui__search-input")) return;
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => handleInput(e.target.value), 500);
+    });
+  });
+</script>
+
 <style>
   .search-page { padding: 3rem 0 4rem; max-width: 720px; }
   .search-page h1 { margin-bottom: 0.5rem; }

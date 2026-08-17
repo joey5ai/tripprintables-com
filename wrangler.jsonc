@@ -1,0 +1,12 @@
+{
+  "name": "tripprintables",
+  "pages_build_output_dir": "./_site",
+  "compatibility_date": "2026-07-28",
+  "d1_databases": [
+    {
+      "binding": "SEARCH_LOG_DB",
+      "database_name": "tripprintables-search-log",
+      "database_id": "abcf8d62-b17d-49aa-88be-d442d99278ea"
+    }
+  ]
+}
