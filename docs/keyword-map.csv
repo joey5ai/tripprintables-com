@@ -1,0 +1,111 @@
+# TripPrintables keyword map | pull date 2026-08-18 | Ahrefs API v3, country=us | tools: keywords-explorer-overview, matching-terms, volume-history, serp-overview
+keyword,volume_us_avg,difficulty_kd,cpc_usd,volume_global,parent_topic,hub,cluster,seasonality,peak_months,status,build_window
+travel itinerary template,51000,5,0.8,156000,itinerary,plan-it,itinerary-core,evergreen,,ANCHOR - built,done
+itinerary template,17000,8,0.6,29000,itinerary,plan-it,itinerary-core,evergreen,,secondary on anchor,done
+trip itinerary template,2800,4,0.8,3800,itinerary,plan-it,itinerary-core,evergreen,,secondary on anchor,done
+vacation itinerary template,1300,6,0.6,1700,travel itinerary template,plan-it,itinerary-core,evergreen,,secondary on anchor,done
+travel planner template,800,6,0.6,2000,itinerary,plan-it,itinerary-core,evergreen,,secondary on anchor,done
+trip planner template,800,7,0.6,1400,itinerary,plan-it,itinerary-core,evergreen,,NEW secondary - add to anchor,now
+free itinerary template,800,7,0.5,1200,itinerary,plan-it,itinerary-core,evergreen,,secondary on anchor,done
+vacation planner template,600,7,0.7,800,itinerary,plan-it,itinerary-core,evergreen,,NEW secondary - add to anchor,now
+itinerary template free,600,7,0.5,800,itinerary,plan-it,itinerary-core,evergreen,,secondary on anchor,done
+free travel itinerary template,500,5,0.6,800,itinerary,plan-it,itinerary-core,evergreen,,secondary on anchor,done
+travel planning template,450,4,0.7,700,itinerary,plan-it,itinerary-core,evergreen,,NEW secondary - add to anchor,now
+europe trip planner template,200,4,0.7,200,europe trip planner template,plan-it,itinerary-core,evergreen,,NEW - low priority page,later
+travel itinerary template google sheets,1100,3,0.7,2200,travel itinerary template google sheets,plan-it,itinerary-format,evergreen,,built,done
+itinerary template google docs,1100,0,0.7,1500,travel itinerary template,plan-it,itinerary-format,evergreen,,built,done
+google docs itinerary template,700,5,0.7,1000,travel itinerary template,plan-it,itinerary-format,evergreen,,secondary,done
+google sheets travel itinerary template,600,3,0.6,1100,travel itinerary template google sheets,plan-it,itinerary-format,evergreen,,secondary,done
+travel itinerary template google docs,500,7,1.0,800,travel itinerary template,plan-it,itinerary-format,evergreen,,secondary,done
+travel itinerary template excel,500,7,0.7,2200,travel itinerary template excel,plan-it,itinerary-format,evergreen,,NEW PAGE - phase 2,now
+travel itinerary template word,500,4,0.7,1600,travel itinerary template word,plan-it,itinerary-format,evergreen,,NEW PAGE - phase 2,now
+google sheets itinerary template,500,3,0.15,900,google sheets travel itinerary template,plan-it,itinerary-format,evergreen,,secondary,done
+excel itinerary template,450,7,0.35,900,travel itinerary template,plan-it,itinerary-format,evergreen,,secondary,done
+excel travel itinerary template,400,7,0.35,1000,travel itinerary template excel,plan-it,itinerary-format,evergreen,,secondary,done
+google doc itinerary template,400,5,0.7,500,travel itinerary template,plan-it,itinerary-format,evergreen,,secondary,done
+bachelorette itinerary template,1200,0,0.6,1400,travel itinerary template,plan-it,itinerary-occasion,evergreen,,built,done
+wedding itinerary template,900,1,0.7,1700,wedding itinerary template,plan-it,itinerary-occasion,evergreen,,built,done
+birthday itinerary template,450,0,0.5,700,travel itinerary template,plan-it,itinerary-occasion,evergreen,,NEW PAGE - cheap add KD 0,now
+business trip itinerary template,150,4,4.5,200,itinerary,plan-it,itinerary-occasion,evergreen,,built - HIGHEST CPC on site,done
+how to prepare a travel budget,4800,23,0.0,10000,budget travel tips,plan-it,budget-guide,evergreen,,NEW - guide intent not template,now
+how to create a travel budget,700,23,25.0,2900,budget travel tips,plan-it,budget-guide,evergreen,,NEW - CPC $25.00 highest on site,now
+travel budget template,400,20,1.4,1100,travel budget,plan-it,budget,evergreen,,secondary on budget page,done
+trip budget template,150,8,1.4,300,travel budget template,plan-it,budget,evergreen,,built - thin volume,done
+road trip planner template,90,6,0.7,100,itinerary template,plan-it,itinerary-core,evergreen,,built - KD fell 20 to 6 since Jul,done
+trip planning checklist,90,4,0.6,150,travel planning checklist,plan-it,checklist,evergreen,,built - thin volume,done
+travel planning checklist,200,3,0.35,300,trip planning checklist,plan-it,checklist,evergreen,,secondary,done
+family vacation planner,150,26,0.9,200,pack up and go,plan-it,itinerary-occasion,evergreen,,CUT - 150 vol / KD 26,cut
+packing list,28000,28,0.03,77000,packing list,pack-it,packing-head,evergreen,,HUB PAGE - hardest term in cluster,now
+packing list template,3200,3,0.5,6300,packing list template,pack-it,packing-head,evergreen,,built - promote to hub,now
+packing list for vacation,5900,5,0.04,7100,packing list,pack-it,packing-head,summer,Jun-Aug,NEW PAGE - high priority,spring
+travel packing list,3600,22,0.04,9100,packing list,pack-it,packing-head,evergreen,,secondary on hub,now
+vacation packing list,3600,26,0.02,9600,packing list,pack-it,packing-head,summer,Jun-Aug,secondary on hub,spring
+ultimate packing list,2600,25,0.08,4500,packing list,pack-it,packing-head,evergreen,,secondary on hub,now
+printable packing list,450,2,0.15,600,ultimate packing list pdf,pack-it,packing-format,evergreen,,NEW - exact product match,now
+travel packing checklist pdf free,700,1,0.2,1200,ultimate packing list pdf,pack-it,packing-format,evergreen,,NEW - exact product match,now
+cruise packing list,9200,4,0.09,11000,cruise packing list,pack-it,packing-trip-type,EVERGREEN,flat 8.2k-10.5k,NEW PAGE - #1 PRIORITY,now
+packing list for cruise,1200,4,0.1,1300,cruise packing list,pack-it,packing-trip-type,evergreen,,secondary on cruise page,now
+disney cruise packing list,1400,0,0.1,1500,disney cruise packing list,pack-it,packing-destination,evergreen,,NEW PAGE,now
+alaska cruise packing list,1300,0,0.1,1400,alaska cruise packing list,pack-it,packing-destination,summer,May-Aug,NEW PAGE,spring
+carnival cruise packing list,600,1,0.1,600,carnival cruise packing list,pack-it,packing-destination,evergreen,,NEW PAGE,now
+7 day cruise packing list pdf,600,4,0.1,700,cruise checklist,pack-it,packing-destination,evergreen,,secondary on cruise page,now
+7 day cruise packing list,400,3,0.1,500,7 day cruise packing list,pack-it,packing-destination,evergreen,,secondary on cruise page,now
+royal caribbean packing list,400,2,0.1,450,royal caribbean packing list,pack-it,packing-destination,evergreen,,NEW PAGE - low priority,later
+beach packing list,3900,4,0.07,4500,beach packing list,pack-it,packing-trip-type,SUMMER,Jun-Jul peak 9.6k,NEW PAGE - build by Mar,spring
+beach trip packing list,1900,4,0.07,2500,beach packing list,pack-it,packing-trip-type,summer,Jun-Jul,secondary on beach page,spring
+beach vacation packing list,1800,0,0.07,2200,beach packing list,pack-it,packing-trip-type,summer,Jun-Jul,secondary on beach page,spring
+packing list for beach vacation,1300,5,0.07,1700,beach packing list,pack-it,packing-trip-type,summer,Jun-Jul,secondary on beach page,spring
+beach packing list with kids,400,1,0.0,450,beach packing list,pack-it,packing-trip-type,summer,Jun-Jul,secondary on beach page,spring
+ski trip packing list,800,0,0.02,1500,how to pack for a ski trip,pack-it,packing-trip-type,WINTER,Dec-Feb peak 2.5k,NEW PAGE - build by Oct,fall
+camping packing list,4300,10,0.03,6800,best camping gear checklist,pack-it,packing-trip-type,summer,May-Aug,NEW PAGE,spring
+car camping packing list,400,2,0.03,500,best camping gear checklist,pack-it,packing-trip-type,summer,May-Aug,secondary,spring
+packing list for camping,450,8,0.03,700,camping essentials,pack-it,packing-trip-type,summer,May-Aug,secondary,spring
+road trip packing list,1200,3,0.05,1600,road trip packing list,pack-it,packing-trip-type,summer,Jun-Aug,NEW PAGE,spring
+backpacking packing list,1100,11,0.06,1500,backpacking checklist,pack-it,packing-trip-type,summer,May-Aug,NEW PAGE,spring
+weekend trip packing list,900,1,0.03,1300,packing list for weekend trip,pack-it,packing-trip-type,evergreen,,NEW PAGE,now
+packing list for weekend trip,800,1,0.03,1000,packing list for weekend trip,pack-it,packing-trip-type,evergreen,,secondary,now
+weekend packing list,800,1,0.02,1300,packing list for weekend trip,pack-it,packing-trip-type,evergreen,,secondary,now
+international travel packing list,1400,24,0.05,1700,international travel packing list,pack-it,packing-trip-type,evergreen,,NEW PAGE,now
+packing checklist for international travel,1400,24,0.06,3600,international travel packing list,pack-it,packing-trip-type,evergreen,,secondary,now
+packing list for international travel,1000,3,0.05,1200,international travel packing list,pack-it,packing-trip-type,evergreen,,secondary,now
+international packing list,800,9,0.04,1000,international travel packing list,pack-it,packing-trip-type,evergreen,,secondary,now
+international trip packing list,400,1,0.05,500,packing list for international travel,pack-it,packing-trip-type,evergreen,,secondary,now
+honeymoon packing list,600,4,0.07,800,honeymoon packing list,pack-it,packing-trip-type,evergreen,,NEW PAGE - pairs w/ wedding itinerary,now
+wedding packing list,450,0,0.04,700,wedding packing list,pack-it,packing-occasion,evergreen,,NEW PAGE - pairs w/ wedding itinerary,now
+business travel checklist,500,2,0.02,900,business travel checklist,pack-it,packing-trip-type,evergreen,,NEW - pairs w/ business itinerary,now
+toiletries packing list,600,4,0.08,900,toiletries list,pack-it,packing-sub,evergreen,,NEW - sub-list low priority,later
+disney packing list,2400,0,0.03,2600,disney packing list,pack-it,packing-destination,evergreen,,NEW PAGE - KD 0 high priority,now
+disney world packing list,900,1,0.02,1000,disney packing list,pack-it,packing-destination,evergreen,,secondary on disney page,now
+packing list for disney world,450,0,0.07,500,disney packing list,pack-it,packing-destination,evergreen,,secondary on disney page,now
+disneyland packing list,600,0,0.07,600,disneyland packing list,pack-it,packing-destination,evergreen,,NEW PAGE,now
+hawaii packing list,1400,0,0.07,1600,hawaii packing list,pack-it,packing-destination,summer,verify,NEW PAGE,now
+packing list for hawaii,600,0,0.07,600,hawaii packing list,pack-it,packing-destination,summer,verify,secondary,now
+costa rica packing list,900,0,0.1,1100,costa rica packing list,pack-it,packing-destination,evergreen,verify,NEW PAGE,now
+japan packing list,900,3,0.1,1600,japan packing list,pack-it,packing-destination,evergreen,verify,NEW PAGE,now
+iceland packing list,700,0,0.07,1100,what to pack for iceland,pack-it,packing-destination,evergreen,verify,NEW PAGE,now
+backpacking europe packing list,600,1,0.07,3200,backpacking europe packing list,pack-it,packing-destination,summer,verify,NEW PAGE,spring
+europe packing list,600,4,0.06,900,packing list,pack-it,packing-destination,summer,verify,NEW PAGE,spring
+florida packing list,500,0,0.07,600,florida packing list,pack-it,packing-destination,winter,verify,NEW PAGE,fall
+safari packing list,450,0,0.15,800,safari packing list,pack-it,packing-destination,evergreen,verify,NEW PAGE - low priority,later
+italy packing list,400,0,0.1,500,packing list for italy,pack-it,packing-destination,summer,verify,NEW PAGE - low priority,later
+college packing list,4600,1,0.0,5000,college dorm checklist,pack-it,packing-life-event,EXTREME AUG SPIKE,Jul-Aug peak 19-20k,NEW PAGE - build by Jun 2027,spring
+dorm packing list,1300,1,0.06,1500,college packing list,pack-it,packing-life-event,extreme aug spike,Jul-Aug,secondary on college page,spring
+college packing list for girls,1000,2,0.0,1000,college dorm checklist,pack-it,packing-life-event,extreme aug spike,Jul-Aug,secondary,spring
+college dorm packing list,600,1,0.0,700,college dorm checklist,pack-it,packing-life-event,extreme aug spike,Jul-Aug,secondary,spring
+packing list for college,500,2,0.0,500,college packing list,pack-it,packing-life-event,extreme aug spike,Jul-Aug,secondary,spring
+college packing list for guys,500,0,0.0,500,college dorm checklist,pack-it,packing-life-event,extreme aug spike,Jul-Aug,secondary,spring
+fsy packing list,1500,0,0.0,1600,fsy packing list,pack-it,packing-life-event,summer,verify,NEW PAGE - LDS youth program,spring
+study abroad packing list,600,0,0.05,1200,study abroad packing list,pack-it,packing-life-event,verify,verify,NEW PAGE,spring
+summer camp packing list,500,0,0.2,600,summer camp packing list,pack-it,packing-life-event,summer,May-Jul,NEW PAGE,spring
+camp packing list,500,5,0.03,800,summer camp packing list,pack-it,packing-life-event,summer,May-Jul,secondary,spring
+sleepover packing list,400,0,0.06,700,sleepover packing list,pack-it,packing-life-event,verify,verify,NEW PAGE - low priority,later
+hospital bag packing list,700,23,0.03,1200,hospital bag checklist,EXCLUDED,not-a-trip,evergreen,,EXCLUDE - childbirth no return leg,never
+hospital packing list,500,10,0.03,800,hospital bag checklist,EXCLUDED,not-a-trip,evergreen,,EXCLUDE,never
+moving packing list,600,4,0.1,700,packing list for moving,EXCLUDED,not-a-trip,evergreen,,EXCLUDE - relocation,never
+packing list for moving,450,4,0.25,600,moving packing list,EXCLUDED,not-a-trip,evergreen,,EXCLUDE,never
+baby packing list,600,0,0.0,900,baby packing list,EXCLUDED,ambiguous,evergreen,,EXCLUDE - intent unclear,never
+packing list envelopes,800,0,0.8,1100,packing list envelopes,EXCLUDED,irrelevant,evergreen,,EXCLUDE - shipping supplies,never
+shipping packing list template,450,1,1.2,500,packing slip template,EXCLUDED,irrelevant,evergreen,,EXCLUDE - shipping docs,never
+air assault packing list,400,0,0.09,400,air assault packing list,EXCLUDED,irrelevant,evergreen,,EXCLUDE - military,never
+travel planner app,500,0,0.8,2500,wanderlog app,EXCLUDED,software-intent,evergreen,,EXCLUDE - software not template,never
+aaa triptik travel planner,500,7,0.6,500,aaa triptik,EXCLUDED,branded,evergreen,,EXCLUDE - branded,never

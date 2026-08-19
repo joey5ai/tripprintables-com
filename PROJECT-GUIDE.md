@@ -20,7 +20,9 @@ Complete Trip Planning Kit bundles editable versions of everything plus bonus te
 Phase 1 of a larger experiment: Joey5 as day-to-day operator, Joseph as board. Batch-approval
 governance now, with a path toward looser autonomy as confidence builds. Full build plan and
 research (keyword data, tech-stack reasoning, batch structure) is in the approved plan this
-project was built from.
+project was built from. Current keyword research (pull date 2026-08-18, Hub 1/Hub 2
+architecture, build calendar, SERP validation) lives in `docs/KEYWORD-RESEARCH.md`, with the
+full data set in `docs/keyword-map.csv`.
 
 ## Key Files
 
