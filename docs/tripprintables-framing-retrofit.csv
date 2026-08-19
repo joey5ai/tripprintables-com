@@ -1,0 +1,12 @@
+# TripPrintables framing retrofit | compiled 2026-08-19 | relabels the round-one difficulty-as-filter language to coverage_tier x organic_timing | TripPrintables is a commercial product site so optional-SKIP remains legitimate here (unlike an encyclopedia), but 'cut' language is softened to 'optional' rather than implying a topic is wrong to have
+term_or_cluster,old_label,coverage_tier,organic_timing,note
+cruise packing list,P1 build now (evergreen),core,soft-now,9200/KD4; CruiseCritic #1 has only 9 refdomains; Etsy listings rank = purchase-intent proof; anchor pack-it hub
+disney packing list,P1-adjacent,core,soft-now,2400/KD0; soft seasonal peak varies by trip timing not calendar month
+beach packing list,build by March,core,medium,3900/KD4; summer-seasonal build ahead of peak
+ski packing list,build by Oct,core,medium,seasonal winter peak; build ahead
+college/dorm packing list cluster,build by June 2027,core,medium,extreme August spike; college/dorm/camp/study-abroad/sleepover/FSY all in-scope as 'trips'
+road trip planner,kept KD dropped 20 to 6,core,soft-now,reverified softer than original pull; keep in plan-it hub
+family vacation planner,CUT (150/KD26),optional,long-game,relabeled from cut to optional: low volume plus real difficulty makes it a legitimate deprioritization for a commercial product site but not erased from scope if a future page naturally covers it
+travel itinerary template (anchor term),P1 hub anchor,core,soft-now,51000/KD5; plan-it hub is essentially complete on this cluster
+trip-planner software-adjacent terms,out of scope,optional-SKIP,n/a,trip-planner space is software category not templates; genuinely not this site's product not merely 'hard'
+hospital-bag / moving packing lists,OUT (scope decision),optional-SKIP,n/a,explicitly excluded from the 'trips' cluster by scope not by difficulty; kept as SKIP not cut-for-difficulty
