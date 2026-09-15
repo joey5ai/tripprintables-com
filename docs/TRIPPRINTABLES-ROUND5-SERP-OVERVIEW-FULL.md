@@ -1,24 +1,39 @@
-# TripPrintables: Full SERP-Overview Pass (98 of 109 Keyword-Map Terms)
+# TripPrintables Round Five: Full SERP-Overview Sweep (98 of 109 Keyword-Map Terms)
 
 **Date:** 2026-09-15
 **Source:** Ahrefs API v3, country = us. `serp-overview` (type=organic filter, top_positions=10)
-**Data file:** `docs/tripprintables-serp-overview-full.csv` (95 terms, this pass)
+**Data file:** `docs/tripprintables-round5-serp-overview-full.csv` (95 terms, this pass)
 **Builds on:** `docs/keyword-map.csv` (109 terms, pull date 2026-08-18), `docs/KEYWORD-RESEARCH.md`
 (round one — `cruise packing list` and `college packing list` checked there),
 `docs/TRIPPRINTABLES-ROUND2-SEASONALITY-COMPETITOR.md` (round two — `packing list template`
 checked there), `docs/TRIPPRINTABLES-ROUND3-DESTINATION-SEASONALITY.md` (round three, which
-flagged this exact gap as open work)
+flagged this exact gap as open work), `docs/TRIPPRINTABLES-ROUND4-COMPETITOR-SERP.md` (round
+four, which pulled the first 8 rows of this same sweep and explicitly left "101 of 109 rows
+still open" — this round completes that sweep)
+
+> **Overlap note:** this pass ran as a separate concurrent session from round four and wasn't
+> aware round four had already pulled 8 of these rows (`packing list`, `camping packing list`,
+> `beach packing list`, `disney packing list`, `international travel packing list`, `packing
+> list for vacation`, `road trip packing list`, `backpacking packing list`) until after this
+> sweep and its own SERP calls were already complete. Those 8 terms were re-pulled here
+> (duplicate spend, ~1,400 units — see the unit-cost note below) rather than skipped, since
+> there was no way to know the overlap in advance. The upside: it's an independent
+> cross-check. Both passes reach the same read on every overlapping term — round four called
+> camping/beach/disney "genuinely open," and round five's independent organic-only pull
+> confirms all three as SOFT with no authority site in the top 10. Nothing in the overlap
+> contradicts round four; treat the two docs as corroborating, not competing.
 
 ---
 
 ## Coverage
 
-98 of the 109 rows in `keyword-map.csv` now have a SERP overview on file: 3 from earlier
-rounds (`cruise packing list`, `college packing list`, `packing list template`) plus 95
-pulled in this pass. The remaining 11 rows are the `EXCLUDE`/`CUT` rows (branded terms,
-software intent, shipping/moving/military off-topic matches, the one over-KD cut) — decisions
-already made in round one; spending units re-verifying a term that will never be built isn't
-real value, so those were skipped deliberately rather than left as an oversight.
+98 of the 109 rows in `keyword-map.csv` now have a SERP overview on file: 3 from round one/two
+(`cruise packing list`, `college packing list`, `packing list template`) plus 95 pulled in this
+round (which includes the 8 rows round four pulled first — see overlap note above). The
+remaining 11 rows are the `EXCLUDE`/`CUT` rows (branded terms, software intent,
+shipping/moving/military off-topic matches, the one over-KD cut) — decisions already made in
+round one; spending units re-verifying a term that will never be built isn't real value, so
+those were skipped deliberately rather than left as an oversight.
 
 **Method note:** the raw `serp-overview` response mixes organic results with AI Overviews,
 People Also Ask, sitelinks, and image-pack entries, which bloats each response 3-5x with
@@ -28,6 +43,10 @@ call (~150-210 units) came in well under round two's unfiltered estimate (~437 u
 
 **Unit cost:** 95 `serp-overview` calls, organic-only, ran **24,724 units** total (workspace
 usage went from 42,611 to 67,335 of the 200,000 monthly allowance — well inside budget).
+Roughly 1,400 of those units are duplicate spend against round four's overlapping 8-term
+batch (see overlap note above) — unavoidable given the two sessions ran concurrently without
+visibility into each other, and cheap enough relative to the 200k monthly allowance not to be
+worth re-litigating.
 
 ---
 

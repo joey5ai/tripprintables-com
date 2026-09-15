@@ -26,9 +26,11 @@ full data set in `docs/keyword-map.csv`. Later research rounds: seasonality/comp
 verification (`docs/TRIPPRINTABLES-ROUND2-SEASONALITY-COMPETITOR.md`), destination-term
 seasonality (`docs/TRIPPRINTABLES-ROUND3-DESTINATION-SEASONALITY.md`), the full backlink
 profile (`docs/TRIPPRINTABLES-BACKLINK-PROFILE.md` — confirms an unsolicited PBN-spam link
-pattern, monitor only, no action needed), and real competitor analysis + a first SERP-overview
-batch (`docs/TRIPPRINTABLES-ROUND4-COMPETITOR-SERP.md`, 8 of 109 keyword-map rows checked;
-full-coverage SERP overview remains open work, see that doc's budget note).
+pattern, monitor only, no action needed), real competitor analysis + a first SERP-overview
+batch (`docs/TRIPPRINTABLES-ROUND4-COMPETITOR-SERP.md`, 8 of 109 keyword-map rows checked),
+and the completed full SERP-overview sweep (`docs/TRIPPRINTABLES-ROUND5-SERP-OVERVIEW-FULL.md`,
+98 of 109 rows now checked — headline finding: 0 of 61 packing-list terms are dominated by a
+generic template platform, vs 9 of 34 itinerary terms Canva-led).
 
 ## Key Files
 
