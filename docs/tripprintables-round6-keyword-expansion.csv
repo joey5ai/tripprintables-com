@@ -1,0 +1,24 @@
+# TripPrintables round six: keyword expansion, new candidates only | pulled 2026-09-15 | Ahrefs API v3 keywords-explorer-matching-terms (match_mode=terms), seeds: "packing list", "itinerary template", "travel checklist", "travel planner", country=us
+# Only terms NOT already present in keyword-map.csv are listed. Terms that duplicate an existing row under different phrasing (e.g. "packing list for japan" vs the mapped "japan packing list") are omitted as non-additive. Excluded-category adjacents (moving/baby/hospital/shipping/military packing, already EXCLUDE rows in keyword-map) are omitted as already-decided.
+keyword,hub,cluster,volume_us,difficulty_kd,cpc_usd,recommendation,notes
+mexico packing list,pack-it,packing-destination,400,0,15,ADD - destination cluster,Same shape as costa rica/japan/iceland already in keyword-map; zero KD
+hiking packing list,pack-it,packing-trip-type,400,14,6,ADD - trip-type cluster,Adjacent to backpacking/camping; real distinct search pattern from "backpacking packing list"
+overnight packing list,pack-it,packing-trip-type,400,0,3,ADD - trip-type cluster,Adjacent to weekend/sleepover cluster already mapped
+thailand packing list,pack-it,packing-destination,350,0,9,ADD - destination cluster,Zero KD destination term not yet mapped
+camino de santiago packing list,pack-it,packing-destination,350,0,10,ADD - niche destination,Pilgrimage-trail search; real narrow-audience intent similar to fsy packing list
+cancun packing list,pack-it,packing-destination,350,0,15,ADD - destination cluster,Zero KD destination term not yet mapped
+rv packing list,pack-it,packing-trip-type,350,3,5,ADD - trip-type cluster,Adjacent to car camping packing list already mapped
+caribbean cruise packing list,pack-it,packing-destination,350,1,15,ADD - broader cruise-destination term,Broader than the already-mapped royal caribbean specific variant
+carry on packing list,pack-it,packing-format,350,9,4,ADD - new sub-cluster,Luggage-constraint framing not yet represented in any mapped cluster
+kilimanjaro packing list,pack-it,packing-destination,300,2,10,ADD - niche adventure destination,Real narrow-audience adventure-travel term
+burning man packing list,pack-it,packing-occasion,300,0,15,ADD - niche festival occasion,Distinct occasion cluster not yet represented
+bachelorette packing list,pack-it,packing-occasion,300,0,1,ADD - distinct from bachelorette itinerary,keyword-map has the itinerary-template version only; this is the packing-list version of the same occasion
+alaska packing list,pack-it,packing-destination,300,0,10,ADD - broader than alaska cruise,Broader intent than the already-mapped alaska cruise specific variant
+international travel checklist,pack-it,packing-trip-type,2700,11,15,ADD - high-volume checklist framing,Nearly 2x the volume of the already-mapped "international travel packing list" under checklist framing - worth its own page or a strong on-page synonym target
+travel packing checklist,pack-it,packing-head,700,0,3,ADD - checklist framing of hub root,Zero-KD checklist-framed variant of the packing list hub root
+travel nurse packing checklist,pack-it,packing-life-event,200,0,,ADD - niche professional audience,Distinct recurring-travel professional audience not represented anywhere in current map
+disney itinerary template,plan-it,itinerary-destination,350,0,30,ADD - itinerary side of Disney cluster,keyword-map has disney packing list; this is the itinerary-template equivalent, zero KD
+road trip itinerary template,plan-it,itinerary-trip-type,250,4,45,ADD - pairs with road trip packing list,Itinerary-side pairing for an already-mapped packing term
+business travel itinerary template,plan-it,itinerary-occasion,350,5,300,WATCH - high CPC but check brand fit,More volume than the already-mapped "business trip itinerary template" (150) at the same low KD; $300 CPC signals strong commercial intent worth a second look
+packing list for snowshoeing,pack-it,uncertain,1000,,,DO NOT ADD - data-quality flag,Volume with null KD/CPC and no organic parent_topic is typically a low-confidence/scraped match, not a verified real search pattern - do not build on this number alone
+your travel packing list for france vacation,pack-it,uncertain,900,,,DO NOT ADD - data-quality flag,Oddly-phrased long-tail match with null KD/CPC; same low-confidence pattern as the snowshoeing row above
