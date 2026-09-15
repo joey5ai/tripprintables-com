@@ -1,0 +1,13 @@
+keyword,volume,difficulty,parent_topic,coverage_tier,organic_timing,note
+travel checklist,6000,41,travel checklist,core,medium,hub-strength generic term not yet targeted as its own page; high volume but KD41 is the highest in this batch
+international travel checklist,2700,11,international travel checklist,supporting,soft-now,low difficulty and decent volume; pairs with existing international travel packing list page
+fsy packing list 2026,600,,fsy packing list,supporting,soft-now,annual-refresh signal; add a year-tagged section or update to the existing fsy packing list page rather than a new page
+cruise packing list for women,400,,cruise packing list,optional,long-game,demographic-angle variant of an already-covered cluster; low volume, worth a subheading not a new page
+overnight packing list,400,0,overnight packing list,optional,soft-now,new use-case distinct from weekend/sleepover; KD0
+hiking packing list,400,14,hiking essentials,optional,medium,adjacent to camping cluster already covered; moderate difficulty for this batch
+mexico packing list,400,0,packing list for mexico,supporting,soft-now,new destination not in current map; KD0
+rv packing list,350,3,rv camping checklist,optional,soft-now,adjacent to camping/road-trip cluster already covered
+thailand packing list,350,0,packing list for thailand,optional,long-game,new destination; lower volume than other destination terms already covered
+camino de santiago packing list,350,0,camino de santiago packing list,optional,long-game,niche pilgrimage/hiking destination; KD0 but narrow audience
+cancun packing list,350,0,cancun packing list,optional,long-game,new destination; overlaps existing mexico-adjacent interest
+african safari travel checklist,400,,african safari travel checklist,optional,long-game,reinforces existing safari packing list coverage rather than a new topic
