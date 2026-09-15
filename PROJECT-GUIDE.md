@@ -30,9 +30,12 @@ pattern, monitor only, no action needed), real competitor analysis + a first SER
 batch (`docs/TRIPPRINTABLES-ROUND4-COMPETITOR-SERP.md`, 8 of 109 keyword-map rows checked),
 the completed full SERP-overview sweep (`docs/TRIPPRINTABLES-ROUND5-SERP-OVERVIEW-FULL.md`,
 98 of 109 rows now checked — headline finding: 0 of 61 packing-list terms are dominated by a
-generic template platform, vs 9 of 34 itinerary terms Canva-led), and a keyword-expansion pass
+generic template platform, vs 9 of 34 itinerary terms Canva-led), a keyword-expansion pass
 beyond the original 109 terms (`docs/TRIPPRINTABLES-ROUND6-KEYWORD-EXPANSION.md`, 18 new
-on-topic candidates — backlog only, not yet SERP-verified or built).
+on-topic candidates — backlog only, not yet SERP-verified or built), and a niche-native
+competitor search (`docs/TRIPPRINTABLES-ROUND7-NICHE-COMPETITOR-CHECK.md` — six domains now
+checked across four rounds, zero genuine travel-printables specialists found; the field is
+confirmed open, not just inferred).
 
 ## Key Files
 
