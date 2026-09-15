@@ -22,7 +22,13 @@ governance now, with a path toward looser autonomy as confidence builds. Full bu
 research (keyword data, tech-stack reasoning, batch structure) is in the approved plan this
 project was built from. Current keyword research (pull date 2026-08-18, Hub 1/Hub 2
 architecture, build calendar, SERP validation) lives in `docs/KEYWORD-RESEARCH.md`, with the
-full data set in `docs/keyword-map.csv`.
+full data set in `docs/keyword-map.csv`. Later research rounds: seasonality/competitor-gap
+verification (`docs/TRIPPRINTABLES-ROUND2-SEASONALITY-COMPETITOR.md`), destination-term
+seasonality (`docs/TRIPPRINTABLES-ROUND3-DESTINATION-SEASONALITY.md`), the full backlink
+profile (`docs/TRIPPRINTABLES-BACKLINK-PROFILE.md` — confirms an unsolicited PBN-spam link
+pattern, monitor only, no action needed), and real competitor analysis + a first SERP-overview
+batch (`docs/TRIPPRINTABLES-ROUND4-COMPETITOR-SERP.md`, 8 of 109 keyword-map rows checked;
+full-coverage SERP overview remains open work, see that doc's budget note).
 
 ## Key Files
 
