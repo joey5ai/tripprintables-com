@@ -1,0 +1,99 @@
+# TripPrintables full SERP-overview pass | pulled 2026-09-15 | Ahrefs API v3 serp-overview, type=organic, top_positions=10, country=us
+# Covers all 95 keyword-map.csv rows not already checked in prior rounds (cruise packing list, college packing list, and packing list template were checked in round one/two - see KEYWORD-RESEARCH.md and TRIPPRINTABLES-ROUND2-SEASONALITY-COMPETITOR.md). 11 EXCLUDE/CUT rows were not pulled (decision already made, not worth spending units on). 98 of 109 keyword-map rows now have a SERP overview on file.
+# verdict: HARD = dominated by a big generic platform (Canva/Pinterest/Notion/Adobe) with no crack in the page. MIXED = a big platform or brand leads but real independent competitors also rank. SOFT = no dominant platform; low-DR blogs, forums, UGC, or thin PDFs fill most of page one.
+keyword,hub,cluster,verdict,top1_domain,top1_dr,notes
+travel itinerary template,plan-it,itinerary-core,HARD,canva.com,93,Canva #1 with 42660 est. traffic; gdoc.io the only real travel-native competitor at #2 (DR48)
+itinerary template,plan-it,itinerary-core,HARD,canva.com,93,Canva dominant; AI Overview cites Canva/Adobe/Notion as the answer
+trip itinerary template,plan-it,itinerary-core,HARD,canva.com,93,Same Canva #1 pattern as the head term
+vacation itinerary template,plan-it,itinerary-core,MIXED,notion.com,89,No single dominant #1 organic; Notion/Pinterest/Etsy split the page
+travel planner template,plan-it,itinerary-core,MIXED,templatelab.com,0,Image-pack results from unranked template sites plus Notion at #5
+trip planner template,plan-it,itinerary-core,MIXED-HARD,canva.com,93,Canva #1 but gdoc/Reddit/gatherandgotravel (DR34) fill the rest
+free itinerary template,plan-it,itinerary-core,HARD,canva.com,93,Canva #1 with 22059 est. traffic
+vacation planner template,plan-it,itinerary-core,MIXED-HARD,canva.com,93,Canva #3 organic after image-pack noise; Notion also present
+itinerary template free,plan-it,itinerary-core,HARD,canva.com,93,Canva #1 with 110324 est. traffic - dominant across every Canva-matching query
+free travel itinerary template,plan-it,itinerary-core,MIXED,pinterest.com,97,No dominant #1; Pinterest/Adobe/gdoc split the page
+travel planning template,plan-it,itinerary-core,HARD,canva.com,93,Canva #2 organic behind question snippets - still effectively the answer
+europe trip planner template,plan-it,itinerary-core,SOFT,happytowander.com,47,Niche travel blog (DR47) ranks #1 - genuinely soft
+travel itinerary template google sheets,plan-it,itinerary-format,SOFT,thegoodocs.com,54,Mid-DR template-native site #1; no big platform present
+itinerary template google docs,plan-it,itinerary-format,SOFT,gdoc.io,48,gdoc.io and thegoodocs (DR54) fill top 2 - both mid-DR travel-template sites
+google docs itinerary template,plan-it,itinerary-format,MIXED,gdoc.io,48,gdoc.io #1 but Canva #2
+google sheets travel itinerary template,plan-it,itinerary-format,SOFT,thegoodocs.com,54,Same soft pattern as the google-sheets variant above
+travel itinerary template google docs,plan-it,itinerary-format,MIXED,gdoc.io,48,gdoc.io #1 (weak page - 0 backlinks) then thegoodocs/Pinterest/Canva
+travel itinerary template excel,plan-it,itinerary-format,SOFT,etsy.com,94,Etsy listings plus sourcetable (DR44) datanumen (DR60) templates-plan (DR1) - no dedicated competitor
+travel itinerary template word,plan-it,itinerary-format,MIXED,template.net,79,template.net/gatherandgotravel/allaboutplanners split the page
+google sheets itinerary template,plan-it,itinerary-format,SOFT,pinterest.com,97,No major platform; Etsy listings graphed.com (DR31) and a random .org site fill the rest
+excel itinerary template,plan-it,itinerary-format,SOFT,thattravelitch.com,3,DR3 personal blog ranks #1 - as soft as a SERP gets
+excel travel itinerary template,plan-it,itinerary-format,SOFT,thattravelitch.com,3,Same DR3 blog #1; yourcocotrip (DR15) #2 - two tiny sites lead
+google doc itinerary template,plan-it,itinerary-format,MIXED,gdoc.io,48,gdoc.io #1 then Canva/thegoodocs/Pinterest
+bachelorette itinerary template,plan-it,itinerary-occasion,MIXED-HARD,canva.com,93,Canva/Pinterest/Zazzle/Etsy dominate but a DR0 store site cracks #4
+wedding itinerary template,plan-it,itinerary-occasion,SOFT,etsy.com,94,Page is 6 of 10 Etsy listings (each DR94 but 0 individual backlinks) - no strong dedicated competitor
+birthday itinerary template,plan-it,itinerary-occasion,MIXED,canva.com,93,Canva/Etsy/template.net/thegoodocs/Zazzle spread across the page
+business trip itinerary template,plan-it,itinerary-occasion,MIXED,template.net,79,template.net/Canva/Adobe lead; gdoc/corporatetraveler/gatherandgotravel fill the rest
+how to prepare a travel budget,plan-it,budget-guide,SOFT,travelbugtonic.com,35,Guide intent - all mid/small blogs no authority (out of scope per keyword-map: guide not template)
+how to create a travel budget,plan-it,budget-guide,SOFT,travelbugtonic.com,35,Same guide-intent pattern; thelitebackpacker (DR1) also ranks
+travel budget template,plan-it,budget,MIXED-SOFT,canva.com,93,Canva #1 but rebeccagracedesigns (DR26) is #2
+trip budget template,plan-it,budget,MIXED-SOFT,reddit.com,95,Fragmented page - no single dominant travel-budget competitor
+road trip planner template,plan-it,itinerary-core,MIXED-SOFT,canva.com,93,Canva #1 but gatherandgotravel/tsmith (DR46)/thattravelitch (DR3) are soft below it
+trip planning checklist,plan-it,checklist,SOFT,theorderlyspace.com,31,DR31 blog ranks #1 - no major platform present at all
+travel planning checklist,plan-it,checklist,SOFT,theorderlyspace.com,31,Same DR31 blog #1 - confirms the thin-volume soft-SERP status already in keyword-map
+packing list,pack-it,packing-head,MIXED,smartertravel.com,76,Travel-native authority (DR76) dominant but not a generic platform - beatable with strong content
+packing list for vacation,pack-it,packing-head,MIXED,smartertravel.com,76,smartertravel/eaglecreek (DR67) travel authorities lead
+travel packing list,pack-it,packing-head,MIXED,smartertravel.com,76,Same authority pair leads
+vacation packing list,pack-it,packing-head,MIXED,smartertravel.com,76,Same pattern; cozi/justagirlandherblog fill the rest
+ultimate packing list,pack-it,packing-head,SOFT,sosusie.com,13,DR13 and DR4 personal blogs occupy #1-2 - extremely soft
+printable packing list,pack-it,packing-format,SOFT-MIXED,smartertravel.com,76,smartertravel PDF leads but jellymemos (DR3) cracks #9
+travel packing checklist pdf free,pack-it,packing-format,SOFT,smartertravel.com,76,thegetawayjournals (DR2) ranks #8 - very soft field
+packing list for cruise,pack-it,packing-trip-type,SOFT-MIXED,cruisecritic.com,75,Cruise-niche authority present but jessicalynnwrites (DR22) blog cracks #7
+disney cruise packing list,pack-it,packing-destination,MIXED-SOFT,disneycruise.disney.go.com,92,Disney brand #1 but disneycruiseplanning (DR10)/wearemagicjourneys (DR1) crack top 10
+alaska cruise packing list,pack-it,packing-destination,SOFT,princess.com,79,Cruise-line blogs plus a DR1 personal blog (stacycoker) at #6 - genuinely soft
+carnival cruise packing list,pack-it,packing-destination,MIXED,carnival.com,80,Carnival brand holds 3 of top 10 positions but is beatable
+7 day cruise packing list pdf,pack-it,packing-destination,SOFT,cruisecritic.com,75,theopensuitcase (DR13)/gangwaze (DR25)/travelingtulls (DR16) - all small sites
+7 day cruise packing list,pack-it,packing-destination,SOFT-MIXED,aliciatenise.com,37,Independent cruise blogger (DR37) leads over CruiseCritic
+royal caribbean packing list,pack-it,packing-destination,MIXED,royalcaribbean.com,82,Brand-dominant (low priority anyway per keyword-map)
+beach packing list,pack-it,packing-trip-type,SOFT,ucci.org,42,No authority site anywhere in top 10 - a PDF a forum thread and a DR1 site are the competition
+beach trip packing list,pack-it,packing-trip-type,SOFT,lemon8-app.com,81,Fragmented UGC/forum page; homemakerhopeful (DR2) cracks #10
+beach vacation packing list,pack-it,packing-trip-type,SOFT,lemon8-app.com,81,DR2-8 personal blogs and a course site fill most of the page
+packing list for beach vacation,pack-it,packing-trip-type,SOFT-MIXED,smartertravel.com,76,luggageandlipstick (DR34)/mahaloresorts (DR17)/sprinkledwithpinkshop (DR33) all crack top 10
+beach packing list with kids,pack-it,packing-trip-type,SOFT,thelafayettemom.com,25,All small parenting/travel blogs (DR8-53) - no authority present
+ski trip packing list,pack-it,packing-trip-type,SOFT-MIXED,aspensnowmass.com,75,Resort brands present but alishaarnold (DR16) cracks #4
+camping packing list,pack-it,packing-trip-type,SOFT,edokformation.wordpress.com,96,REI does not rank at all for this exact variant; heratlas (DR0) cracks #9
+car camping packing list,pack-it,packing-trip-type,MIXED,rei.com,87,REI #1 (strong outdoor authority) but page fragments after that
+packing list for camping,pack-it,packing-trip-type,MIXED,rei.com,87,REI leads (top organic result - position 1 was a non-organic feature); fragmented after that
+road trip packing list,pack-it,packing-trip-type,SOFT,travellingwithnikki.com,16,DR16 blog beats REI (REI only #4) - soft field
+backpacking packing list,pack-it,packing-trip-type,MIXED-SOFT,rei.com,87,REI #1 but restlessmeanderer (DR1) cracks #3
+weekend trip packing list,pack-it,packing-trip-type,SOFT,pinterest.com,97,No authority; whatdiplomatsdo (DR11) is a real competitor at #5
+packing list for weekend trip,pack-it,packing-trip-type,MIXED-SOFT,smartertravel.com,76,smartertravel leads but level8cases (DR46)/goanderson (DR30) crack top 10
+weekend packing list,pack-it,packing-trip-type,MIXED,smartertravel.com,76,Same smartertravel-led pattern
+international travel packing list,pack-it,packing-trip-type,MIXED-SOFT,livelikeitstheweekend.com,42,Independent blogger (DR42) leads over Rick Steves/SmarterTravel
+packing checklist for international travel,pack-it,packing-trip-type,MIXED-SOFT,livelikeitstheweekend.com,42,Same pattern as the head international term
+packing list for international travel,pack-it,packing-trip-type,MIXED-SOFT,livelikeitstheweekend.com,42,Same pattern
+international packing list,pack-it,packing-trip-type,SOFT,livelikeitstheweekend.com,42,Independent blog ranks #1 outright - genuinely soft
+international trip packing list,pack-it,packing-trip-type,MIXED-SOFT,livelikeitstheweekend.com,42,Same blogger leads
+honeymoon packing list,pack-it,packing-trip-type,MIXED,brides.com,85,Wedding publishers (Brides/Knot) dominate but abbysaylor (DR11) cracks #7
+wedding packing list,pack-it,packing-occasion,SOFT,reddit.com,95,madelineturner (DR4)/evermoreoccasions (DR6) rank top 10 - very soft
+business travel checklist,pack-it,packing-trip-type,MIXED,amexglobalbusinesstravel.com,77,Fragmented - brand blogs and Indeed lead; no dedicated packing-list competitor
+toiletries packing list,pack-it,packing-sub,MIXED-SOFT,livingproof.com,70,Beauty-brand blog leads but cabinzero (DR53)/witwhimsy (DR42) are the real packing-list competitors
+disney packing list,pack-it,packing-destination,SOFT,smartmousetravel.com,20,DR20 blog #1; Disney's own site only #10 - very soft
+disney world packing list,pack-it,packing-destination,SOFT,reddit.com,95,Mostly forums and small sites - no dedicated authority
+packing list for disney world,pack-it,packing-destination,SOFT,smartmousetravel.com,20,Same DR20 blog pattern
+disneyland packing list,pack-it,packing-destination,SOFT,majesticgardenhotel.com,35,Extremely fragmented; thedebtist (DR10)/ourtravelingtots (DR6) crack top 10
+hawaii packing list,pack-it,packing-destination,SOFT,lemon8-app.com,81,No dedicated authority site in top 10 at all
+packing list for hawaii,pack-it,packing-destination,SOFT,bloggeratlarge.com,45,twolittlepandas (DR2)/drjuliesfunlife (DR4) crack top 10
+costa rica packing list,pack-it,packing-destination,MIXED-SOFT,mytanfeet.com,54,Real travel-niche authority present (mytanfeet) but beatable
+japan packing list,pack-it,packing-destination,MIXED-SOFT,lemon8-app.com,81,Fodors (DR80) present but midnightblueelephant (DR38)/likewhereyouregoing (DR25) also rank
+iceland packing list,pack-it,packing-destination,MIXED,guidetoiceland.is,76,Strong dedicated niche authority (guidetoiceland) - hardest of the destination terms
+backpacking europe packing list,pack-it,packing-destination,SOFT,kassieduggan.com,4,DR4/DR2 personal blogs rank top 5 - extremely soft
+europe packing list,pack-it,packing-destination,MIXED-SOFT,ricksteves.com,77,Rick Steves authority present but under30experiences/camelsandchocolate crack top 10
+florida packing list,pack-it,packing-destination,SOFT,adventuringwithshannon.com,19,DR9-19 sites dominate the entire page - no authority present
+safari packing list,pack-it,packing-destination,SOFT,thistraveltribe.com,14,jeffhyer (DR0) personal blog ranks #4 - as soft as it gets
+italy packing list,pack-it,packing-destination,SOFT,fueledbywanderlust.com,26,stayingblonde (DR13)/adventuresinitaly (DR17) - all small blogs
+dorm packing list,pack-it,packing-life-event,MIXED-SOFT,justbeeblog.com,33,A PDF on a DR33 blog leads; audreyatienza (DR2) also ranks
+college packing list for girls,pack-it,packing-life-event,MIXED-SOFT,justbeeblog.com,33,Same PDF leads; goodhousekeeping (DR90) present but beatable
+college dorm packing list,pack-it,packing-life-event,SOFT,lifestyledijess.com,15,DR15 personal blog ranks #1 outright
+packing list for college,pack-it,packing-life-event,MIXED-SOFT,justbeeblog.com,33,Same justbeeblog PDF leads
+college packing list for guys,pack-it,packing-life-event,SOFT-MIXED,justbeeblog.com,33,theunclutterangel (DR12) also cracks top 10
+fsy packing list,pack-it,packing-life-event,SOFT,churchofjesuschrist.org,86,Official .org page is thin; rest of page is Reddit/Scribd/forums - matches the LDS-niche note in the round-three doc
+study abroad packing list,pack-it,packing-life-event,SOFT-MIXED,reddit.com,95,margotlee (DR5) personal blog cracks top 10
+summer camp packing list,pack-it,packing-life-event,SOFT,acacamps.org,78,camprio (DR7)/camplindenmere (DR14) are the real competitors not acacamps
+camp packing list,pack-it,packing-life-event,MIXED-SOFT,rei.com,87,REI present but ymcacampwillson (DR23) also ranks
+sleepover packing list,pack-it,packing-life-event,SOFT,pinterest.com,97,ecosa (DR60)/pyjamas (DR7) are the real dedicated competitors
