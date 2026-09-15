@@ -1,0 +1,11 @@
+# TripPrintables round-four: SERP overview batch 1 (8 of 109 keyword-map rows) | pulled 2026-09-15 | Ahrefs serp-overview, country=us, top_positions=10
+# Selection: hub-root term + all not-yet-checked terms flagged NEW PAGE/high-priority by volume, from docs/keyword-map.csv. cruise packing list and college packing list were already checked in round one (see docs/KEYWORD-RESEARCH.md); packing list template was checked in round two (see docs/tripprintables-competitor-gap.csv). Not repeated here.
+term,volume,kd,ai_overview_present,top_organic_dr,top_organic_domain,weakest_top10_content_dr,weakest_top10_content_domain,verdict
+packing list,28000,28,yes,76,smartertravel.com,22,travelingspud.com,real competition at the top (DR76 UR12) but real gaps at DR22-42 mid-pack; hub root worth building but not a fast win
+packing list for vacation,5900,5,yes,76,smartertravel.com,42,livelikeitstheweekend.com,direct printable-positioned competitor present at position 8 (justagirlandherblog.com DR68) - closest analog to this site found in any SERP checked so far
+camping packing list,4300,10,yes,58,battlbox.com,0,heratlas.com,extremely weak field - Reddit/Facebook/Quora/forum posts and a DR0 personal site hold real positions; wide open despite KD10
+beach packing list,3900,4,yes,42,ucci.org (PDF),1,arubareadyrentals.com,no dominant organic incumbent at all - top results are a PDF, Pinterest, and forum posts; genuinely open
+disney packing list,2400,0,yes,81,purewow.com,6,momentsenriched.com,multiple sub-DR30 niche blogs already rank on page 1 (DR20 at position 2) - confirms the KD0 rating is real, easiest term in this batch
+international travel packing list,1400,24,yes,77,ricksteves.com,7,omventure.com,mixed field - some real authority (Rick Steves DR77) but a DR7 page still holds position 10; moderate difficulty matches KD24
+road trip packing list,1200,3,yes,92,traveler.marriott.com (thin brand page),16,travellingwithnikki.com,big-brand pages (Marriott/AAA/REI) hold generic thin positions; real content competitors are all low-DR; one direct "free printable" branded competitor (fieldsandheels.com, DR21, position 9)
+backpacking packing list,1100,11,no,87,rei.com,1,restlessmeanderer.com,toughest term checked this batch - REI and OutdoorGearLab hold real authoritative gear-review content at 1-2; matches its higher KD11 rating; not a fast win
