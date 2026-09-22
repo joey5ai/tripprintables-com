@@ -1,0 +1,13 @@
+#!/bin/sh
+# Blocks direct `git push`. Real deploys must go through the hardened
+# deploy-tripprintables.sh script (pre-flight build, post-check,
+# auto-rollback) -- a bare push skips all of that. This var is set by the
+# script itself, right before it pushes, nowhere else.
+if [ -z "$DEPLOY_SCRIPT_RUNNING" ]; then
+  echo ""
+  echo "BLOCKED: direct 'git push' is disabled for this repo."
+  echo "Use the deploy script instead: ~/.openclaw/scripts/deploy-tripprintables.sh"
+  echo ""
+  exit 1
+fi
+exit 0

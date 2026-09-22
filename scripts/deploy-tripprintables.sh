@@ -52,6 +52,7 @@ CF_TOKEN=$(cat "$OPENCLAW_DIR/credentials/cloudflare_token_init_joey5_full")
 CLOUDFLARE_ACCOUNT_ID="46715f703eb2c81161ecc82ee7b5a004"
 ZONE_ID="424c280ff08d0682828ce53c3a6a54c5"
 CF_API="https://api.cloudflare.com/client/v4"
+PAGES_PROJECT="tripprintables"
 TELEGRAM="$OPENCLAW_DIR/scripts/telegram-notify.sh"
 LIVE_URL="https://tripprintables.com"
 CONTENT_FINGERPRINT="Trip Printables: Free Travel Planning Templates"
@@ -83,6 +84,50 @@ purge_cache() {
     return 1
   fi
   log "Cache purged ($label)."
+}
+
+# Fixed 2026-08-16: the old post-push check only polled the live URL for a
+# content fingerprint (the page title), which never changes between old and
+# new deploys -- it can report success while Cloudflare Pages is still
+# mid-build, serving the previous version. Confirmed happening twice in one
+# night (this site and knowyourisms.com) before this fix. This polls
+# Cloudflare's own Pages deployment API for the specific commit we just
+# pushed and waits for its actual "deploy success" stage, which is the real
+# signal -- the HTTP/fingerprint check after this is now just a final sanity
+# check on top of a build Cloudflare itself confirms is live.
+wait_for_cf_deployment() {
+  local commit="$1"
+  local attempt status_line stage status
+  for attempt in $(seq 1 18); do
+    status_line=$(curl -s -H "Authorization: Bearer $CF_TOKEN" \
+      "$CF_API/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$PAGES_PROJECT/deployments?per_page=10" \
+      | python3 -c "
+import json, sys
+d = json.load(sys.stdin)
+commit = '$commit'
+for dep in d.get('result', []):
+    trig = dep.get('deployment_trigger', {}).get('metadata', {})
+    if trig.get('commit_hash', '').startswith(commit[:12]):
+        stage = dep.get('latest_stage', {})
+        print(stage.get('name', 'unknown'), stage.get('status', 'unknown'))
+        break
+else:
+    print('not_found none')
+")
+    stage=$(echo "$status_line" | awk '{print $1}')
+    status=$(echo "$status_line" | awk '{print $2}')
+    log "CF Pages deployment check attempt $attempt/18: stage=$stage status=$status"
+    if [ "$stage" = "deploy" ] && [ "$status" = "success" ]; then
+      return 0
+    fi
+    if [ "$status" = "failure" ]; then
+      echo "CF Pages build/deploy failed (stage=$stage)"
+      return 1
+    fi
+    sleep 10
+  done
+  echo "CF Pages deployment for commit $commit did not reach deploy success within the poll window"
+  return 1
 }
 
 log "=== Deploy started ==="
@@ -131,29 +176,19 @@ else
   fi
   log "Pushing $AHEAD commit(s) to origin main..."
 
-  git -C "$REPO_DIR" push origin main || fail "git push failed"
-  log "Push complete. Waiting for Cloudflare Pages build..."
+  NEW_COMMIT=$(git -C "$REPO_DIR" rev-parse HEAD)
+  DEPLOY_SCRIPT_RUNNING=1 git -C "$REPO_DIR" push origin main || fail "git push failed"
+  log "Push complete. Waiting for Cloudflare Pages to actually finish building/deploying commit $NEW_COMMIT..."
 
-  # -- 4. Post-push check -- poll for CF build to complete -----------------------
+  # -- 4. Post-push check -- confirm CF Pages itself reports this exact commit deployed, then sanity-check over HTTP --
 
-  CHECK_FAIL="timeout"
-  for attempt in $(seq 1 12); do
-    log "Post-push check attempt $attempt/12 (waiting for CF build)..."
-    sleep 10
-    HTTP_CODE=$(curl -s -o "$LIVE_BODY" -w "%{http_code}" --max-time 15 "$LIVE_URL" || echo "000")
-    if [ "$HTTP_CODE" != "200" ]; then
-      CHECK_FAIL="HTTP $HTTP_CODE (expected 200)"
-    elif ! grep -qF "$CONTENT_FINGERPRINT" "$LIVE_BODY"; then
-      CHECK_FAIL="content fingerprint missing ('$CONTENT_FINGERPRINT' not found in live page)"
-    else
-      CHECK_FAIL=""
-      log "Post-push check passed (attempt $attempt) -- new content is live."
-      break
-    fi
-    log "Check not yet passing (attempt $attempt): $CHECK_FAIL"
-  done
+  CF_DEPLOY_ERROR=$(wait_for_cf_deployment "$NEW_COMMIT" 2>&1) || fail "$CF_DEPLOY_ERROR (no rollback attempted -- content never confirmed live, nothing to roll back from)"
+  log "Cloudflare Pages confirms commit $NEW_COMMIT reached deploy success."
 
-  [ -n "$CHECK_FAIL" ] && fail "deploy did not land within the poll window: $CHECK_FAIL (no rollback attempted -- content never confirmed live, nothing to roll back from)"
+  HTTP_CODE=$(curl -s -o "$LIVE_BODY" -w "%{http_code}" --max-time 15 "$LIVE_URL" || echo "000")
+  [ "$HTTP_CODE" = "200" ] || fail "post-deploy sanity check: live site returned HTTP $HTTP_CODE (expected 200) after CF confirmed deploy success -- investigate manually"
+  grep -qF "$CONTENT_FINGERPRINT" "$LIVE_BODY" || fail "post-deploy sanity check: content fingerprint missing after CF confirmed deploy success -- investigate manually"
+  log "Post-deploy sanity check passed -- new content confirmed live."
 fi
 
 # -- 5. siteIsLive-branched validation -------------------------------------------
@@ -274,7 +309,7 @@ Manual review needed."
   fi
   log "Post-launch failure -- reverting deploy commit and pushing..."
   git -C "$REPO_DIR" revert --no-edit HEAD || fail "git revert failed -- manual intervention required (previous commit: $PREV_COMMIT)"
-  git -C "$REPO_DIR" push origin main || fail "git push after revert failed -- manual intervention required (previous commit: $PREV_COMMIT)"
+  DEPLOY_SCRIPT_RUNNING=1 git -C "$REPO_DIR" push origin main || fail "git push after revert failed -- manual intervention required (previous commit: $PREV_COMMIT)"
   log "Revert pushed. Waiting for CF to rebuild from reverted commit..."
 
   REVERT_OK=""
