@@ -128,6 +128,10 @@ restraint is the point.
 
 ## Success Gate (60-90 days from launch)
 
+> **Verification note (2026-10-06):** none of the checks below have been re-verified against
+> real data this pass. There is no Search Console, Ahrefs, or GA4 credential on this machine,
+> so indexing coverage and ranking status are unknown from here, not confirmed either way.
+
 - **Day 30 check-in:** are pages being indexed at all (Search Console coverage report)? Early
   warning, not a gate.
 - **Day 60 gate, technical:** if fewer than ~80% of pages (12/15) are indexed, that's a
@@ -167,12 +171,9 @@ restraint is the point.
   don't forget the second platform when that work happens.
 - **Kit (ESP) account, not yet set up.** Needed for email capture. Same-day setup, no
   verification wait. Owner: Joseph. Blocks: Batch 4's email-capture wiring.
-- **GTM (Google Tag Manager) container, not yet set up.** `src/_data/site.json`'s `gtmId` is
-  still the literal placeholder value `GTM-XXXXXXX` — the layout wiring exists, but no real
-  container is connected, so there is no analytics visibility into this property at all right
-  now. Confirmed live (2026-08-08): the placeholder string ships as-is to production. Owner:
-  Joseph (create a GTM container, or point to an existing one, and update `gtmId`). Blocks: any
-  traffic/conversion visibility.
+- **GTM: resolved.** `src/_data/site.json`'s `gtmId` is a real container, `GTM-5M4W7LV8`,
+  confirmed live on the production homepage (2026-10-06). No longer the placeholder string
+  this item previously tracked.
 - **Anchor template document content, approved as the pattern** (2026), including a fix for
   the Google Docs version's day-by-day block: pre-fill 5 day blocks rather than one, with a
   one-line note on how to add more for longer trips (Docs has no native repeating-section
@@ -181,5 +182,16 @@ restraint is the point.
 
 ## Deployment
 
-Push to `main` → Cloudflare Pages auto-builds (`npx @11ty/eleventy`, output `_site`) and
-deploys. No scripts needed. Rollback via the Cloudflare Pages dashboard if a bad deploy ships.
+Push to `main` → Cloudflare Pages auto-builds (`npm run build`, which runs
+`eleventy && npx pagefind --site _site`, output `_site`) and deploys. No scripts needed.
+Rollback via the Cloudflare Pages dashboard if a bad deploy ships.
+
+> ⚠️ **Build command corrected, 2026-10-06.** Cloudflare's project settings had
+> `build_command` set to `npx @11ty/eleventy` only, the single-step command this section used
+> to list. That skipped the Pagefind postbuild step on every Cloudflare build, so
+> `/pagefind/*` silently fell through to the catch-all and returned HTML instead of the real
+> assets, breaking site search in production for an unknown but extended period (confirmed
+> broken on deployments going back at least 2 months). Fixed by changing Cloudflare's
+> `build_command` to `npm run build`, matching `package.json`. Verified live afterward: search
+> works end to end, `/sitemap.xml` includes all 15 template pages (a related sitemap gap from
+> the same bad build is also resolved now that the real two-step build runs).
