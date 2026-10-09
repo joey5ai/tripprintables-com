@@ -55,7 +55,7 @@ CF_API="https://api.cloudflare.com/client/v4"
 PAGES_PROJECT="tripprintables"
 TELEGRAM="$OPENCLAW_DIR/scripts/telegram-notify.sh"
 LIVE_URL="https://tripprintables.com"
-CONTENT_FINGERPRINT="Trip Printables: Free Travel Planning Templates"
+CONTENT_FINGERPRINT="Trip Printables - Free Travel Planning Templates"
 
 PREV_COMMIT=""
 
