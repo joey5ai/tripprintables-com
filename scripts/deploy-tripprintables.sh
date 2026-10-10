@@ -350,13 +350,13 @@ if [ "$DRY_RUN" = "true" ]; then
   notify "tripprintables.com DRY RUN passed (no push, no deploy, no cache purge)
 Commit checked: $(git -C "$REPO_DIR" rev-parse --short HEAD)
 siteIsLive: $SITE_IS_LIVE_RAW
-Checks: HTTP 200 + content fingerprint OK + $([ "$SITE_IS_LIVE_RAW" = "false" ] && echo "meta robots noindex confirmed, no sitemap line" || echo "meta robots index confirmed, sitemap line present, crawl clean")"
+Checks: HTTP 200 + content fingerprint OK + $([ "$SITE_IS_LIVE_RAW" = "false" ] && echo "meta robots noindex confirmed, sitemap line present" || echo "meta robots index confirmed, sitemap line present, crawl clean")"
   log "=== Dry run finished successfully, no real deploy occurred ==="
 else
   purge_cache "post-deploy" || log "Warning: cache purge failed after deploy, continuing"
   notify "tripprintables.com deployed
 Commit: $(git -C "$REPO_DIR" rev-parse --short HEAD)
 siteIsLive: $SITE_IS_LIVE_RAW
-Checks: HTTP 200 + content fingerprint OK + $([ "$SITE_IS_LIVE_RAW" = "false" ] && echo "meta robots noindex confirmed, no sitemap line" || echo "meta robots index confirmed, sitemap line present, crawl clean")"
+Checks: HTTP 200 + content fingerprint OK + $([ "$SITE_IS_LIVE_RAW" = "false" ] && echo "meta robots noindex confirmed, sitemap line present" || echo "meta robots index confirmed, sitemap line present, crawl clean")"
   log "=== Deploy finished successfully ==="
 fi
