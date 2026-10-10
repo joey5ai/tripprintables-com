@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ title | pageTitle(page.url) }}</title>
 <meta name="description" content="{{ description }}">
-<meta name="robots" content="{% if site.siteIsLive %}index, follow{% else %}noindex, follow{% endif %}">
+<meta name="robots" content="{% if noindex %}noindex, follow{% elif site.siteIsLive %}index, follow{% else %}noindex, follow{% endif %}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
 <!-- Open Graph -->

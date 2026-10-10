@@ -111,6 +111,41 @@ function checkFile(filePath) {
   }
 }
 
+// Emits the complete, automatically-discovered real page list as JSON. A
+// "real page" is any content file with front matter that isn't marked
+// eleventyExcludeFromCollections (the same test checkFile() above already
+// uses to skip robots.njk/sitemap.njk) -- never a hand-typed list kept
+// separately from that test. URL follows Eleventy's own default convention
+// (no permalink overrides exist on any real page in this site): path
+// relative to src/, extension stripped, "index" collapses to its directory.
+function listPages() {
+  const pages = [];
+  for (const file of walk(SRC_DIR)) {
+    const content = fs.readFileSync(file, "utf8");
+    const frontMatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    if (!frontMatterMatch) continue;
+    const frontMatter = frontMatterMatch[1];
+    if (/^eleventyExcludeFromCollections:\s*true/m.test(frontMatter)) continue;
+
+    const relFromSrc = path.relative(SRC_DIR, file).replace(/\\/g, "/");
+    const withoutExt = relFromSrc.replace(/\.(njk|md)$/, "");
+    const dir = withoutExt.endsWith("/index") || withoutExt === "index"
+      ? withoutExt.replace(/(^|\/)index$/, "")
+      : withoutExt;
+    const route = dir === "" ? "/" : `/${dir}/`;
+    pages.push({ path: route, state: "public" });
+  }
+  if (fs.existsSync(path.join(SRC_DIR, "404.njk"))) {
+    pages.push({ path: "/__qa_404_probe__", state: "private" });
+  }
+  return pages;
+}
+
+if (process.argv.includes("--list-pages")) {
+  console.log(JSON.stringify(listPages(), null, 2));
+  process.exit(0);
+}
+
 const files = walk(SRC_DIR);
 files.forEach(checkFile);
 
