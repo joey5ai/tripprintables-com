@@ -263,13 +263,13 @@ fetch_robots
 if ! robots_always_allows; then
   VALIDATION_FAIL="robots.txt is not a clean 'Allow: /' -- this should never happen in either state as of 2026-08-16, needs manual review"
 elif [ "$SITE_IS_LIVE_RAW" = "false" ]; then
-  log "Dark-state ruleset (siteIsLive false): confirming meta robots is noindex and the Sitemap line is absent..."
+  log "Dark-state ruleset (siteIsLive false): confirming meta robots is noindex (the real gate) and the Sitemap line is present (robots.txt is never the gate, per 2026-10-10 policy)..."
   if ! meta_robots_is_noindex; then
     VALIDATION_FAIL="meta robots tag is not noindex,follow -- indexing silently enabled while dark"
-  elif robots_has_sitemap_line; then
-    VALIDATION_FAIL="robots.txt still has a Sitemap line while dark -- should be absent until launch"
+  elif ! robots_has_sitemap_line; then
+    VALIDATION_FAIL="robots.txt is missing its Sitemap line -- it should always be present regardless of launch state; noindex is the only real gate"
   else
-    log "Meta robots confirmed noindex,follow, Sitemap line confirmed absent. Dark state: no further checks, no rollback path (nothing real is exposed while dark)."
+    log "Meta robots confirmed noindex,follow, Sitemap line confirmed present. Dark state: no further checks, no rollback path (nothing real is exposed while dark)."
   fi
 else
   log "Live-state ruleset (siteIsLive true): confirming meta robots is index, Sitemap line present, running crawl check..."
